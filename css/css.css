@@ -1,0 +1,172 @@
+@keyframes loading {
+    100% {opacity: 1}
+    75% {opacity: 0.75}
+    50% {opacity: 0.5}
+    25% {opacity: 0.25}
+    0% {opacity: 0}
+}
+body{
+    background-color: #eeeeee;
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+#content{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    align-items: baseline;
+}
+.dialog_body,.dialog_body_right{
+    background-color: #fff;
+    border-radius: 0.3rem;
+    width: auto;
+    height: auto;
+    padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+    display: inline-block;
+    filter: drop-shadow(0px 0px 0.12rem grey);
+    position: relative;
+    word-wrap:break-word;
+    max-width: 40%;
+    font-size: 0.7rem;
+    margin-left: 0.9rem;
+}
+.dialog_body_right{
+    margin-right: 0.9rem;
+    display: flex;
+    align-self: flex-end;
+}
+.dialog_body_right::before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 0.36rem solid transparent;
+    border-left:0.72rem solid #ffffff;
+    border-bottom: 0.36rem solid transparent;
+    position: absolute;
+    margin-left: calc(100% - 0.72rem);
+    margin-top: -0.36rem;
+    top: 50%;
+}
+.dialog_body::before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 0.36rem solid transparent;
+    border-right:0.72rem solid #ffffff;
+    border-bottom: 0.36rem solid transparent;
+    position: absolute;
+    margin-left: -1.2rem;
+    margin-top: -0.36rem;
+    top: 50%;
+}
+.loading{
+    display:block;
+    position: relative;
+    padding: 0.6rem;
+}
+.loading>span{
+    width: 0.12rem;
+    height: 0.12rem;
+    border-radius: 50%;
+    background-color: grey;
+    display: inline-block;
+    position: absolute;
+    margin-left: -0.6rem;
+}
+.loading>span:nth-child(1){
+    animation-duration: 1s;
+    animation-name: loading;
+    animation-iteration-count: infinite;
+    animation-delay:0s;
+}
+.loading>span:nth-child(2){
+    transform:translate(0.5rem,0.5rem);
+    animation-duration: 1s;
+    animation-name: loading;
+    animation-iteration-count: infinite;
+    animation-delay:0.25s;
+}
+.loading>span:nth-child(3){
+    transform:translateX(1rem);
+    animation-duration: 1s;
+    animation-name: loading;
+    animation-iteration-count: infinite;
+    animation-delay:0.5s;
+}
+.loading>span:nth-child(4){
+    transform:translate(0.5rem,-0.5rem);
+    animation-duration: 1s;
+    animation-name: loading;
+    animation-iteration-count: infinite;
+    animation-delay:0.75s;
+}
+.loading>span:nth-child(5){
+    transform:translate(0.18rem,-0.36rem);
+    animation-duration: 1s;
+    animation-name: loading;
+    animation-iteration-count: infinite;
+    animation-delay:0.875s;
+}
+.loading>span:nth-child(6){
+    transform:translate(0.18rem,0.36rem);
+    animation-duration: 1s;
+    animation-name: loading;
+    animation-iteration-count: infinite;
+    animation-delay:0.125s;
+}
+.loading>span:nth-child(7){
+    transform:translate(0.82rem,-0.36rem);
+    animation-duration: 1s;
+    animation-name: loading;
+    animation-iteration-count: infinite;
+    animation-delay:0.625s;
+}
+.loading>span:nth-child(8){
+    transform:translate(0.82rem,0.36rem);
+    animation-duration: 1s;
+    animation-name: loading;
+    animation-iteration-count: infinite;
+    animation-delay:0.375s;
+}
+.system{
+    display: flex;
+    align-self: center;
+    width: 3.5rem;
+    height: 1rem;
+    font-size: 0.8rem;
+    justify-content: center;
+    border-radius: 0.5rem;
+    box-shadow: grey 0 0 0.4rem;
+    color: white;
+}
+.green{
+    background-color: #00CD66;
+}
+.red{
+    background-color: #EE4000;
+}
+.dialog_main{
+    display: flex;
+    flex-flow: nowrap row;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+.dialog_avatar{
+    width: 2rem;
+    height: 2rem;
+    background-color: grey;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    display: flex;
+    align-self: flex-start;
+}
+.dialog_avatar::before{
+    content: "moonburn";
+    font-size: 0.6rem;
+    position: absolute;
+    margin-top: -0.2rem;
+    margin-left: 2.1rem;
+}

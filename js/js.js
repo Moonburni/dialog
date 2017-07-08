@@ -14,7 +14,7 @@ function goOn(state){
     }else if(state === "能介绍一下你自己吗？"||state ==="详细一点可以吗？"||state === "介绍一下你吧"){
         scrollMove("性别男", dialogBuilder,"爱好...前端", dialogBuilder, "广州中医药计算机专业大四学生", dialogBuilder,"<a href='https://github.com/Moonburni'>我的gitHub</a>", dialogBuilder,"<a href='http://www.jianshu.com/u/4ce5e6053736'>我的简书</a>", dialogBuilder,["不错!怎么联系你？","快到碗里来!"],answerBodyBuilder);
     }else if(state === "除了前端还有什么兴趣爱好？"){
-        scrollMove("我喜欢唱歌", dialogBuilder,"喜欢音乐", dialogBuilder, "还有看书，各种书~各种类型的书", dialogBuilder,["介绍一下你吧？","再见，对你不感兴趣"],answerBodyBuilder);
+        scrollMove("我喜欢唱歌", dialogBuilder,"喜欢音乐", dialogBuilder, "还有看书，各种书~各种类型的书", dialogBuilder,["介绍一下你吧","再见，对你不感兴趣"],answerBodyBuilder);
     }else if(state === "再见，对你不感兴趣"){
         scrollMove("好吧，再见....", dialogBuilder,false,online)
     }else if(state === "不错!怎么联系你？"||state ==="快到碗里来!"){

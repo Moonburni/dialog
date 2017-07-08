@@ -18,7 +18,7 @@ function goOn(state){
     }else if(state === "再见，对你不感兴趣"){
         scrollMove("好吧，再见....", dialogBuilder,false,online)
     }else if(state === "不错!怎么联系你？"||state ==="快到碗里来!"){
-        scrollMove("我的电子邮箱是:", dialogBuilder,"2047311885@qq.com", dialogBuilder,"我的手机是:", dialogBuilder,"13535452921", dialogBuilder,false,online)
+        scrollMove("我的电子邮箱是:", dialogBuilder,"2047311885@qq.com", dialogBuilder,"我的手机是:", dialogBuilder,"13535452921", dialogBuilder,"求勾搭，求联系~", dialogBuilder,false,online)
     }
 }
 

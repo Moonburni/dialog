@@ -18,7 +18,7 @@ body{
     background-color: #eeeeee;
     margin: 0;
     padding: 0;
-    font-family: cursive;
+    font-family: "微软雅黑 Light";
 }
 #content{
     display: flex;

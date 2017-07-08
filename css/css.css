@@ -1,9 +1,18 @@
 @keyframes loading {
-    100% {opacity: 1}
-    75% {opacity: 0.75}
-    50% {opacity: 0.5}
-    25% {opacity: 0.25}
     0% {opacity: 0}
+    100% {opacity: 1}
+}
+@keyframes turnIn {
+    0% {opacity: 0;transform: scale(0,0)}
+    100% {opacity: 1;transform: scale(1,1)}
+}
+@keyframes turnLeft {
+    0% {opacity: 0;transform:translateX(-15%)}
+    100% {opacity: 1;transform: translateX(0)}
+}
+@keyframes turnRight {
+0% {opacity: 0;transform:translateX(15%)}
+100% {opacity: 1;transform: translateX(0)}
 }
 body{
     background-color: #eeeeee;
@@ -13,9 +22,12 @@ body{
 }
 #content{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-content: flex-start;
     align-items: baseline;
+    width: 100%;
+    flex-grow:1;
+    overflow: auto;
 }
 .dialog_body,.dialog_body_right{
     background-color: #fff;
@@ -23,13 +35,15 @@ body{
     width: auto;
     height: auto;
     padding: 0.3rem 0.6rem 0.3rem 0.6rem;
-    display: inline-block;
+    display:flex;
     filter: drop-shadow(0px 0px 0.12rem grey);
     position: relative;
     word-wrap:break-word;
     max-width: 40%;
     font-size: 0.7rem;
     margin-left: 0.9rem;
+    transition: all 2s linear 200ms;
+    flex-grow:0;
 }
 .dialog_body_right{
     margin-right: 0.9rem;
@@ -78,6 +92,7 @@ body{
     animation-duration: 1s;
     animation-name: loading;
     animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
     animation-delay:0s;
 }
 .loading>span:nth-child(2){
@@ -85,6 +100,7 @@ body{
     animation-duration: 1s;
     animation-name: loading;
     animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
     animation-delay:0.25s;
 }
 .loading>span:nth-child(3){
@@ -92,6 +108,7 @@ body{
     animation-duration: 1s;
     animation-name: loading;
     animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
     animation-delay:0.5s;
 }
 .loading>span:nth-child(4){
@@ -99,6 +116,7 @@ body{
     animation-duration: 1s;
     animation-name: loading;
     animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
     animation-delay:0.75s;
 }
 .loading>span:nth-child(5){
@@ -106,6 +124,7 @@ body{
     animation-duration: 1s;
     animation-name: loading;
     animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
     animation-delay:0.875s;
 }
 .loading>span:nth-child(6){
@@ -113,6 +132,7 @@ body{
     animation-duration: 1s;
     animation-name: loading;
     animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
     animation-delay:0.125s;
 }
 .loading>span:nth-child(7){
@@ -120,6 +140,7 @@ body{
     animation-duration: 1s;
     animation-name: loading;
     animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
     animation-delay:0.625s;
 }
 .loading>span:nth-child(8){
@@ -127,6 +148,7 @@ body{
     animation-duration: 1s;
     animation-name: loading;
     animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
     animation-delay:0.375s;
 }
 .system{
@@ -169,4 +191,49 @@ body{
     position: absolute;
     margin-top: -0.2rem;
     margin-left: 2.1rem;
+}
+.turnIn{
+    animation-duration: 1s;
+    animation-name: turnIn;
+    animation-timing-function:ease-in-out;
+}
+.turnLeft{
+    animation-duration: 1s;
+    animation-name: turnLeft;
+    animation-timing-function:ease-in-out;
+}
+.turnRight{
+    animation-duration: 1s;
+    animation-name: turnRight;
+    animation-timing-function:ease-in-out;
+}
+#answer_body{
+    display: flex;
+    align-self: flex-end;
+    width: 100%;
+    height: 2rem;
+    background-color: rgba(23,23,23,0.3);
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    font-size: 0.7rem;
+    transition: all 0.5s ease-in-out 100ms;
+    overflow: hidden;
+}
+#answer_body>div{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    color: white;
+}
+#answer_body>div:first-child{
+    border-right: 0.1rem solid white;
+}
+#main{
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: flex-start;
+    align-items: baseline;
+    min-height: 100vh;
 }

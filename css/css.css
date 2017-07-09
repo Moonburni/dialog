@@ -15,10 +15,11 @@
 100% {opacity: 1;transform: translateX(0)}
 }
 body{
-    background-color: #eeeeee;
+    background-color: rgba(23,23,23,0.2);
     margin: 0;
     padding: 0;
     font-family: "微软雅黑 Light";
+    color:black;
 }
 #content{
     display: flex;
@@ -27,7 +28,10 @@ body{
     align-items: baseline;
     width: 100%;
     flex-grow:1;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    padding-bottom: 1.5rem;
 }
 .dialog_body,.dialog_body_right{
     background-color: #fff;
@@ -43,7 +47,8 @@ body{
     font-size: 0.7rem;
     margin-left: 0.9rem;
     transition: all 2s linear 200ms;
-    flex-grow:0;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 .dialog_body_right{
     margin-right: 0.9rem;
@@ -156,11 +161,14 @@ body{
     align-self: center;
     width: 3.5rem;
     height: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     justify-content: center;
     border-radius: 0.5rem;
     box-shadow: grey 0 0 0.4rem;
     color: white;
+    line-height: 1rem;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 .green{
     background-color: #00CD66;
@@ -175,6 +183,8 @@ body{
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 0.8rem;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 .dialog_avatar{
     width: 2rem;
@@ -184,11 +194,13 @@ body{
     margin-left: 0.5rem;
     display: flex;
     align-self: flex-start;
+    box-shadow: 0 0 0.5rem grey;
+    cursor: pointer;
 }
 .dialog_avatar::before{
     content: "moonburn";
     font-size: 0.6rem;
-    position: absolute;
+
     margin-top: -0.2rem;
     margin-left: 2.1rem;
 }
@@ -219,6 +231,8 @@ body{
     font-size: 0.7rem;
     transition: all 0.5s ease-in-out 100ms;
     overflow: hidden;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 #answer_body>div{
     display: flex;
@@ -226,14 +240,59 @@ body{
     flex-grow: 1;
     flex-shrink: 1;
     color: white;
+    cursor: pointer;
 }
 #answer_body>div:first-child{
     border-right: 0.1rem solid white;
 }
 #main{
     display: flex;
+    width: 100%;
     flex-flow: column nowrap;
     align-content: flex-start;
     align-items: baseline;
+    height: 100vh;
+    margin: auto;
+    background-color: #eeeeee;
+    max-width: 20rem;
+    transition: all 0.5s ease-in-out 100ms;
+    transform-style: preserve-3d;
+    transform-origin: left bottom;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.page_turn_up{
+    transform:  rotateZ(-90deg);
+}
+.page_turn_down{
+    transform: rotateZ(0);
+}
+.info_page_turn_up{
+    transform:  rotateZ(-90deg);
+}
+.info_page_turn_down{
+    transform: rotateZ(0);
+}
+#box{
+    width: 100%;
+    height: auto;
+    perspective: 200rem;
+    overflow: hidden;
+    max-width: 20rem;
+    margin: auto;
+}
+#info_body{
+    width: 100%;
     min-height: 100vh;
+    margin: auto;
+    background-color: rgba(23,23,23,0.6);
+    transition: all 0.5s ease-in-out 100ms;
+    transform-style: preserve-3d;
+    transform-origin: left bottom;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }

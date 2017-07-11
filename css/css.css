@@ -425,6 +425,7 @@ body {
     align-items: center;
     flex-flow: column wrap;
     color: white;
+    font-size: 0.8rem;
 }
 #info_main:before{
     content: '';

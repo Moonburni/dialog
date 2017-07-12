@@ -126,42 +126,46 @@ let action = {
     }
 };
 
+let data = {
+    1:()=>scrollMove("O(∩_∩)O", dialogLeft, "我是广州中医药大学", dialogLeft, "计算机专业的大四学生", dialogLeft, "特别喜欢前端~", dialogLeft, ["除了前端还有什么兴趣爱好？", "详细一点可以吗？"], dialogDown),
+    2:()=>scrollMove("额...", dialogLeft, "这个是我模仿一款叫做《异次元通讯》的手机文字游戏做的", dialogLeft, "是不是很特别呀,哈哈", dialogLeft, ["能介绍一下你自己吗？", "做这个的目的是什么？"], dialogDown),
+    3:()=>scrollMove("额...", dialogLeft, "这个是我模仿一款叫做《异次元通讯》的手机文字游戏做的", dialogLeft, "是不是很特别呀,哈哈", dialogLeft, ["能介绍一下你自己吗？", "做这个的目的是什么？"], dialogDown),
+    4:()=>scrollMove("性别男", dialogLeft, "爱好...前端", dialogLeft, "广州中医药计算机专业大四学生", dialogLeft, "<a href='https://github.com/Moonburni'>我的gitHub</a>", dialogLeft, "<a href='http://www.jianshu.com/u/4ce5e6053736'>我的简书</a>", dialogLeft, ["不错!怎么联系你？", "再见，对你不感兴趣"], dialogDown),
+    5:()=>scrollMove("我喜欢唱歌", dialogLeft, "喜欢音乐", dialogLeft, "还有看书，各种书~各种类型的书", dialogLeft, ["介绍一下你吧", "再见，对你不感兴趣"], dialogDown),
+    6:()=>scrollMove("好吧，再见....", dialogLeft, '', online_red),
+    7:()=>scrollMove("我的电子邮箱是：", dialogLeft, "2047311885@qq.com", dialogLeft, "我的手机是：", dialogLeft, "13535452921", dialogLeft, "求勾搭，求联系~", dialogLeft, '', online_red),
+    8:()=>scrollMove("<a href='https://github.com/Moonburni'>我的gitHub</a>", dialogLeft, "<a href='http://www.jianshu.com/u/4ce5e6053736'>我的简书</a>", dialogLeft, ["不错!怎么联系你？", "再见，对你不感兴趣"], dialogDown),
+    9:'你是谁？'||"能介绍一下你自己吗？",
+    10:'这是什么？',
+    11:'做这个的目的是什么？',
+    12:"能介绍一下你自己吗？"||"介绍一下你吧",
+    13:"除了前端还有什么兴趣爱好？",
+    14:"再见，对你不感兴趣",
+    15:"不错!怎么联系你？" || "快到碗里来!",
+    16:"还有其他东西吗？",
+    17:"详细一点可以吗？"
+};
+
 function goOn(state) {
-    if (state === 1) {
-        scrollMove("O(∩_∩)O", dialogLeft, "我是广州中医药大学", dialogLeft, "计算机专业的大四学生", dialogLeft, "特别喜欢前端~", dialogLeft, ["除了前端还有什么兴趣爱好？", "详细一点可以吗？"], dialogDown);
-    } else if (state === 2) {
-        scrollMove("额...", dialogLeft, "这个是我模仿一款叫做《异次元通讯》的手机文字游戏做的", dialogLeft, "是不是很特别呀,哈哈", dialogLeft, ["能介绍一下你自己吗？", "做这个的目的是什么？"], dialogDown);
-    } else if (state === 3) {
-        scrollMove("...", dialogLeft, "不瞒您说，我是想找一份有关前端实习的工作（捂脸）", dialogLeft, "又不知道做什么", dialogLeft, "觉得这个挺好玩的，就像试试看", dialogLeft, ["还有其他东西吗？", "介绍一下你吧"], dialogDown);
-    } else if (state === 4) {
-        scrollMove("性别男", dialogLeft, "爱好...前端", dialogLeft, "广州中医药计算机专业大四学生", dialogLeft, "<a href='https://github.com/Moonburni'>我的gitHub</a>", dialogLeft, "<a href='http://www.jianshu.com/u/4ce5e6053736'>我的简书</a>", dialogLeft, ["不错!怎么联系你？", "再见，对你不感兴趣"], dialogDown);
-    } else if (state === 5) {
-        scrollMove("我喜欢唱歌", dialogLeft, "喜欢音乐", dialogLeft, "还有看书，各种书~各种类型的书", dialogLeft, ["介绍一下你吧", "再见，对你不感兴趣"], dialogDown);
-    } else if (state === 6) {
-        scrollMove("好吧，再见....", dialogLeft, '', online_red);
-    } else if (state === 7) {
-        scrollMove("我的电子邮箱是：", dialogLeft, "2047311885@qq.com", dialogLeft, "我的手机是：", dialogLeft, "13535452921", dialogLeft, "求勾搭，求联系~", dialogLeft, '', online_red);
-    } else if (state === 8) {
-        scrollMove("<a href='https://github.com/Moonburni'>我的gitHub</a>", dialogLeft, "<a href='http://www.jianshu.com/u/4ce5e6053736'>我的简书</a>", dialogLeft, ["不错!怎么联系你？", "再见，对你不感兴趣"], dialogDown);
-    }
+   data[state]()
 }
 
 function selectState(state) {
-    if (state === '你是谁？' || state === "能介绍一下你自己吗？") {
+    if (state === data[9]) {
         return 1;
-    } else if (state === '这是什么？') {
+    } else if (state === data[10]) {
         return 2;
-    } else if (state === '做这个的目的是什么？') {
+    } else if (state === data[11]) {
         return 3;
-    } else if (state === "能介绍一下你自己吗？" || state === "详细一点可以吗？" || state === "介绍一下你吧") {
+    } else if (state === data[12]||state === data[17]) {
         return 4;
-    } else if (state === "除了前端还有什么兴趣爱好？") {
+    } else if (state === data[13]) {
         return 5;
-    } else if (state === "再见，对你不感兴趣") {
+    } else if (state === data[14]) {
         return 6;
-    } else if (state === "不错!怎么联系你？" || state === "快到碗里来!") {
+    } else if (state === data[15]) {
         return 7;
-    } else if (state === "还有其他东西吗？") {
+    } else if (state === data[16]) {
         return 8;
     }
 }

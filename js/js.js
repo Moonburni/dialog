@@ -76,7 +76,6 @@ function answerBuilder(text) {
 function answerBodyBuilder(text) {
     let oldHeight = document.body.scrollHeight;
     let answerBody = document.getElementById('answer_body');
-    answerBody.style.display = 'flex';
     answerBody.style.height = '2rem';
     setTimeout(() => {
         let newHeight = document.body.scrollHeight;
@@ -92,7 +91,6 @@ function answerBodyBuilder(text) {
     answerContent2.innerHTML = text[1];
     answerContent1.onclick = function () {
         selectAnswer(text[0]);
-        answerBody.style.display = 'none';
         answerBody.style.height = '0';
         setTimeout(() => {
             goOn(selectState(text[0]));
@@ -100,7 +98,6 @@ function answerBodyBuilder(text) {
     };
     answerContent2.onclick = function () {
         selectAnswer(text[1]);
-        answerBody.style.display = 'none';
         answerBody.style.height = '0';
         setTimeout(() => {
             goOn(selectState(text[1]));
@@ -155,5 +152,4 @@ function infoBodyTouch() {
     let info = document.getElementById("info_body");
     main.className = "page_turn_down";
     info.className = "info_page_turn_up";
-
 }

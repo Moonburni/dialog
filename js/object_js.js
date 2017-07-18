@@ -129,7 +129,7 @@ let action = {
 let data = {
     1:()=>scrollMove("O(∩_∩)O", dialogLeft, "我是广州中医药大学", dialogLeft, "计算机专业的大四学生", dialogLeft, "特别喜欢前端~", dialogLeft, ["除了前端还有什么兴趣爱好？", "详细一点可以吗？"], dialogDown),
     2:()=>scrollMove("额...", dialogLeft, "这个是我模仿一款叫做《异次元通讯》的手机文字游戏做的", dialogLeft, "是不是很特别呀,哈哈", dialogLeft, ["能介绍一下你自己吗？", "做这个的目的是什么？"], dialogDown),
-    3:()=>scrollMove("额...", dialogLeft, "这个是我模仿一款叫做《异次元通讯》的手机文字游戏做的", dialogLeft, "是不是很特别呀,哈哈", dialogLeft, ["能介绍一下你自己吗？", "做这个的目的是什么？"], dialogDown),
+    3:()=>scrollMove("...", dialogLeft, "不瞒您说，我是想找一份有关前端的工作（捂脸）", dialogLeft, "又不知道做什么", dialogLeft, "觉得这个挺好玩的，就像试试看", dialogLeft, ["还有其他东西吗？", "介绍一下你吧"], dialogDown),
     4:()=>scrollMove("性别男", dialogLeft, "爱好...前端", dialogLeft, "广州中医药计算机专业大四学生", dialogLeft, "<a href='https://github.com/Moonburni'>我的gitHub</a>", dialogLeft, "<a href='http://www.jianshu.com/u/4ce5e6053736'>我的简书</a>", dialogLeft, ["不错!怎么联系你？", "再见，对你不感兴趣"], dialogDown),
     5:()=>scrollMove("我喜欢唱歌", dialogLeft, "喜欢音乐", dialogLeft, "还有看书，各种书~各种类型的书", dialogLeft, ["介绍一下你吧", "再见，对你不感兴趣"], dialogDown),
     6:()=>scrollMove("好吧，再见....", dialogLeft, '', online_red),
